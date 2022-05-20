@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
   productId: number = 10;
-  productStatus: string = 'NotInStock';
+  productStatus: string = 'InStock';
 
   constructor() {}
 
@@ -15,5 +15,9 @@ export class ProductComponent implements OnInit {
 
   getProductStatus() {
     return this.productStatus;
+  }
+
+  getColor() {
+    return this.productStatus === 'NotInStock' ? 'red' : 'lightgreen';
   }
 }
