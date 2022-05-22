@@ -11,7 +11,6 @@ export class ProductsComponent implements OnInit {
   productName = '';
   productDescription = 'Default Description';
   username = '';
-  
   productCreated=false;
 
  
