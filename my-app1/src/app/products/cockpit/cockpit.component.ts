@@ -1,15 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-cockpit',
   templateUrl: './cockpit.component.html',
-  styleUrls: ['./cockpit.component.css']
+  styleUrls: ['./cockpit.component.css'],
 })
 export class CockpitComponent implements OnInit {
+  productName = '';
+  productStock;
 
-  constructor() { }
+  @Output()
+  productAdded = new EventEmitter<{
+    productName: string;
+    productAvailability: string;
+    stock: number;
+  }>();
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  onAddProduct() {
+    this.productAdded.emit({
+      productName: this.productName,
+      productAvailability: this.productStock > 0 ? 'In Stock' : 'Out of Stock',
+      stock: this.productStock,
+    });
   }
-
 }
