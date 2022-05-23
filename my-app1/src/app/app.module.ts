@@ -7,6 +7,8 @@ import { CockpitComponent } from './products/cockpit/cockpit.component';
 import { ProductComponent } from './products/product/product.component';
 import { FormsModule } from '@angular/forms';
 import { NumbersComponent } from './numbers/numbers.component';
+import { BasicHighlightDirective } from './BasicHighlightDirective';
+import { BetterHighlightDirective } from './BetterHighlightDirective';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { NumbersComponent } from './numbers/numbers.component';
     ProductsComponent,
     CockpitComponent,
     ProductComponent,
-    NumbersComponent
+    NumbersComponent,
+    BasicHighlightDirective,
+    BetterHighlightDirective
   ],
   imports: [
     BrowserModule,FormsModule
