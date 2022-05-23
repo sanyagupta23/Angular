@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <button class="btn btn-primary" (click)="toggleShow()">Show</button>
+    </div>
+    <div class="col-3">
+      <div *ngIf="status">
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            *ngFor="let number of numbers; let i = index"
+            [ngClass]="{ odd: number % 2 !== 0 }"
+            [ngStyle]="{
+              backgroundColor: number % 2 !== 0 ? 'coral' : 'lightblue'
+            }"
+          >
+            {{ i }} - {{ number }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

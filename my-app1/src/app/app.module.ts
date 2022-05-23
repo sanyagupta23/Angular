@@ -6,13 +6,15 @@ import { ProductsComponent } from './products/products.component';
 import { CockpitComponent } from './products/cockpit/cockpit.component';
 import { ProductComponent } from './products/product/product.component';
 import { FormsModule } from '@angular/forms';
+import { NumbersComponent } from './numbers/numbers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     CockpitComponent,
-    ProductComponent
+    ProductComponent,
+    NumbersComponent
   ],
   imports: [
     BrowserModule,FormsModule
