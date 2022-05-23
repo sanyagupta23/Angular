@@ -6,7 +6,7 @@
         class="form-control"
         name="productName"
         placeholder="Product Name"
-        [(ngModel)]="productName"
+        #productNameInput
       />
     </div>
     <div class="col">
@@ -19,7 +19,11 @@
       />
     </div>
     <div class="col">
-      <button class="btn btn-primary" type="button" (click)="onAddProduct()">
+      <button
+        class="btn btn-primary"
+        type="button"
+        (click)="onAddProduct(productNameInput)"
+      >
         Add
       </button>
     </div>

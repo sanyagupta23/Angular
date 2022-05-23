@@ -20,11 +20,13 @@ export class CockpitComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onAddProduct() {
+  onAddProduct(productNameInput : HTMLInputElement) {
     this.productAdded.emit({
-      productName: this.productName,
+      productName: productNameInput.value,
       productAvailability: this.productStock > 0 ? 'In Stock' : 'Out of Stock',
       stock: this.productStock,
     });
+    productNameInput.value='';
+    this.productStock='';
   }
 }
