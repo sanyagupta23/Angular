@@ -10,7 +10,7 @@ export class ProductComponent implements OnInit {
   productElement :{
     name:string;
     stock:number;
-    availibility:boolean;
+    availability:string;
   };
   constructor() { }
 
