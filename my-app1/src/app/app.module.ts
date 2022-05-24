@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { NumbersComponent } from './numbers/numbers.component';
 import { BasicHighlightDirective } from './BasicHighlightDirective';
 import { BetterHighlightDirective } from './BetterHighlightDirective';
+import { AccountsComponent } from './accounts/accounts.component';
+import { AccountComponent } from './accounts/account/account.component';
+import { NewAccountComponent } from './accounts/new-account/new-account.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { BetterHighlightDirective } from './BetterHighlightDirective';
     ProductComponent,
     NumbersComponent,
     BasicHighlightDirective,
-    BetterHighlightDirective
+    BetterHighlightDirective,
+    AccountsComponent,
+    AccountComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule,FormsModule
