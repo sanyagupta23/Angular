@@ -3,26 +3,46 @@
     <div class="col d-flex justify-content-center">
       <ul class="nav nav-tabs">
         <li class="nav-items" role="presentation">
-          <a class="nav-link text-dark bg-info m-2" routerLink="/">Home</a>
+          <a
+            class="nav-link text-dark bg-info m-2"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
         </li>
         <li class="nav-items" role="presentation">
-          <a routerLink="products" class="nav-link text-dark bg-info m-2"
+          <a
+            routerLink="products"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link text-dark bg-info m-2"
             >Products</a
           >
         </li>
         <li class="nav-items" role="presentation">
-          <a routerLink="create" class="nav-link text-dark bg-info m-2"
+          <a
+            routerLink="create"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link text-dark bg-info m-2"
             >Create</a
           >
         </li>
         <li class="nav-items" role="presentation">
-          <a routerLink="about" class="nav-link text-dark bg-info m-2">About</a>
+          <a
+            routerLink="about"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link text-dark bg-info m-2"
+            >About</a
+          >
         </li>
       </ul>
     </div>
   </div>
   <div class="row">
-    <div class="col">
+    <div class="col d-flex justify-content-center">
       <router-outlet></router-outlet>
     </div>
   </div>
