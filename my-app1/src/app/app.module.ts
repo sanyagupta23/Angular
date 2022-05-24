@@ -16,12 +16,15 @@ import { LoggingService } from './services/logging.service';
 import { AccountService } from './services/account.service';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
+import { UsersComponent } from './users/users.component';
+import { UserComponent } from './users/user/user.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'numbers', component: NumbersComponent },
   { path: 'accounts', component: AccountsComponent },
+  { path: 'users', component: UsersComponent },
 ];
 
 @NgModule({
@@ -37,6 +40,8 @@ const appRoutes: Routes = [
     AccountComponent,
     NewAccountComponent,
     HomeComponent,
+    UsersComponent,
+    UserComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [],

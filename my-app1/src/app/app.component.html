@@ -6,18 +6,26 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="/">Home</a>
+      <ul class="nav nav-tabs">
+        <li
+          role="presentation"
+          class="nav-item"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link" routerLink="/">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/products">Products</a>
+        <li role="presentation" class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="products">Products</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/numbers">Numbers</a>
+        <li role="presentation" class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="numbers">Numbers</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/accounts">Accounts</a>
+        <li role="presentation" class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="accounts">Accounts</a>
+        </li>
+        <li role="presentation" class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="users">Users</a>
         </li>
       </ul>
     </div>
@@ -28,23 +36,23 @@
     </div>
   </div>
   <!-- <div class="row">
-      <div class="col">
-        <app-home></app-home>
-      </div>
+    <div class="col">
+      <app-home></app-home>
     </div>
-    <div class="row">
-      <div class="col">
-        <app-products></app-products>
-      </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-products></app-products>
     </div>
-    <div class="row">
-      <div class="col">
-        <app-numbers></app-numbers>
-      </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-numbers></app-numbers>
     </div>
-    <div class="row">
-      <div class="col">
-        <app-accounts></app-accounts>
-      </div>
-    </div> -->
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-accounts></app-accounts>
+    </div>
+  </div> -->
 </div>
