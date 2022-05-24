@@ -27,8 +27,10 @@ export class AccountComponent implements OnInit {
   changeStatus(status: string) {
     this.loggingService.logStatusChange(status);
     this.accountService.updateStatus(this.id, status);
+    this.accountService.statusUpdated.emit(status);
   }
-  onDelete(){
-    this.accountService.onDelete(this.id);
+  accountDeleted() {
+    this.accountService.deleteAccount(this.id);
+    this.accountService.accountDeleted.emit(this.account.name);
   }
 }

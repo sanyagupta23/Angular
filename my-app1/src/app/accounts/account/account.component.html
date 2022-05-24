@@ -8,16 +8,16 @@
       <button class="btn btn-outline-primary" (click)="changeStatus('Active')">
         Active
       </button>
-      <button class="btn btn-outline-danger" (click)="changeStatus('InActive')">
-        InActive
-      </button>
       <button
         class="btn btn-outline-secondary"
-        (click)="changeStatus('Hidden')"
+        (click)="changeStatus('InActive')"
       >
+        InActive
+      </button>
+      <button class="btn btn-outline-dark" (click)="changeStatus('Hidden')">
         Hidden
       </button>
-      <button class="btn btn-danger" (click)="onDelete()">Delete</button>
+      <button class="btn btn-danger" (click)="accountDeleted()">Delete</button>
     </div>
   </div>
 </div>
