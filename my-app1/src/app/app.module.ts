@@ -12,6 +12,17 @@ import { BetterHighlightDirective } from './BetterHighlightDirective';
 import { AccountsComponent } from './accounts/accounts.component';
 import { AccountComponent } from './accounts/account/account.component';
 import { NewAccountComponent } from './accounts/new-account/new-account.component';
+import { LoggingService } from './services/logging.service';
+import { AccountService } from './services/account.service';
+import { HomeComponent } from './home/home.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'products', component: ProductsComponent },
+  { path: 'numbers', component: NumbersComponent },
+  { path: 'accounts', component: AccountsComponent },
+];
 
 @NgModule({
   declarations: [
@@ -24,12 +35,11 @@ import { NewAccountComponent } from './accounts/new-account/new-account.componen
     BetterHighlightDirective,
     AccountsComponent,
     AccountComponent,
-    NewAccountComponent
+    NewAccountComponent,
+    HomeComponent,
   ],
-  imports: [
-    BrowserModule,FormsModule
-  ],
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
