@@ -1,4 +1,7 @@
 export class AccountService {
+    onDelete(id: number) {
+      this.accounts.splice(id,1);
+    }
     accounts = [
       {
         name: 'Master Account',
