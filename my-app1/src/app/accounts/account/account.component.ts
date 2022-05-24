@@ -1,11 +1,17 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { LoggingService } from 'src/app/services/logging.service';
 
 @Component({
   selector: 'app-account',
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.css'],
+  providers: [LoggingService],
 })
 export class AccountComponent implements OnInit {
+  constructor(private loggingService: LoggingService) {}
+
+  ngOnInit(): void {}
+
   @Input()
   account: {
     name: string;
@@ -21,12 +27,8 @@ export class AccountComponent implements OnInit {
     newStatus: string;
   }>();
 
-  constructor() {}
-
-  ngOnInit(): void {}
-
   changeStatus(status: string) {
     this.statusChanged.emit({ id: this.id, newStatus: status });
-    console.log('Account status changed, new Status: ' + status);
+    this.loggingService.logStatusChange(status);
   }
 }
