@@ -5,7 +5,6 @@ import { AccountService } from '../services/account.service';
   selector: 'app-accounts',
   templateUrl: './accounts.component.html',
   styleUrls: ['./accounts.component.css'],
-  providers: [AccountService],
 })
 export class AccountsComponent implements OnInit {
   accounts: { name: string; status: string }[] = [];
@@ -14,11 +13,4 @@ export class AccountsComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-  onAccountAdded(newAccount: { name: string; status: string }) {
-    this.accountService.addAccount(newAccount.name, newAccount.status);
-  }
-  onStatusChanged(updateInfo: { id: number; newStatus: string }) {
-    this.accountService.updateStatus(updateInfo.id, updateInfo.newStatus);
-  }
 }
