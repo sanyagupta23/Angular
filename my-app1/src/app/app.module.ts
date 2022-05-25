@@ -19,6 +19,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
 import { UserviewComponent } from './users/userview/userview.component';
+import { ObservablesComponent } from './observables/observables.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
   { path: 'accounts', component: AccountsComponent },
   { path: 'users', component: UsersComponent },
   { path: 'users/:id/:name', component: UserComponent },
+  {path:'observables', component:ObservablesComponent}
 ];
 
 @NgModule({
@@ -45,6 +47,7 @@ const appRoutes: Routes = [
     UsersComponent,
     UserComponent,
     UserviewComponent,
+    ObservablesComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [],
