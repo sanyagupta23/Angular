@@ -10,4 +10,7 @@
   <div class="row">
     <a [routerLink]="['/users', 5, 'Robert']">Load User - Robert</a>
   </div>
+  <div class="row">
+    <p *ngIf="useractivated">User Activated</p>
+  </div>
 </div>
