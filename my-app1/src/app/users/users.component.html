@@ -2,7 +2,11 @@
   <div class="row">
     <div class="col">
       <div class="list-group">
-        <a href="#" class="list-group-item" *ngFor="let user of users">
+        <a
+          [routerLink]="['/users', user.id, user.name]"
+          class="list-group-item"
+          *ngFor="let user of users"
+        >
           <app-userview [user]="user"></app-userview>
         </a>
       </div>
