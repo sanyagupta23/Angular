@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
+import { UserviewComponent } from './users/userview/userview.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
   { path: 'numbers', component: NumbersComponent },
   { path: 'accounts', component: AccountsComponent },
   { path: 'users', component: UsersComponent },
+  { path: 'users/:id/:name', component: UserComponent },
 ];
 
 @NgModule({
@@ -42,6 +44,7 @@ const appRoutes: Routes = [
     HomeComponent,
     UsersComponent,
     UserComponent,
+    UserviewComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [],
