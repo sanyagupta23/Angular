@@ -12,8 +12,7 @@ import { BetterHighlightDirective } from './BetterHighlightDirective';
 import { AccountsComponent } from './accounts/accounts.component';
 import { AccountComponent } from './accounts/account/account.component';
 import { NewAccountComponent } from './accounts/new-account/new-account.component';
-import { LoggingService } from './services/logging.service';
-import { AccountService } from './services/account.service';
+
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './users/users.component';

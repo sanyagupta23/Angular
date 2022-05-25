@@ -8,7 +8,7 @@ import { map, filter } from 'rxjs/operators';
   styleUrls: ['./observables.component.css'],
 })
 export class ObservablesComponent implements OnInit, OnDestroy {
-  private intervalObsSubscription: Subscription;
+
   private customIntervalSubscription: Subscription;
 
   constructor() {}
