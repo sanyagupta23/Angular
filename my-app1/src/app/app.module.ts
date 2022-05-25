@@ -21,6 +21,8 @@ import { UserComponent } from './users/user/user.component';
 import { UserviewComponent } from './users/userview/userview.component';
 import { ObservablesComponent } from './observables/observables.component';
 import { ServersComponent } from './servers/servers.component';
+import { ShortenPipe } from './pipes/shorten.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -51,6 +53,8 @@ const appRoutes: Routes = [
     UserviewComponent,
     ObservablesComponent,
     ServersComponent,
+    ShortenPipe,
+    FilterPipe
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [],

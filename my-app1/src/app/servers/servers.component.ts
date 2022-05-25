@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css'],
 })
 export class ServersComponent implements OnInit {
+  filteredStatus = '';
   servers = [
     {
       name: 'QA Server',
@@ -14,7 +15,7 @@ export class ServersComponent implements OnInit {
       status: 'stable',
     },
     {
-      name: 'Production Server',
+      name: 'Prod',
       instanceType: 'large',
       started: new Date(2018, 8, 11),
       status: 'stable',
