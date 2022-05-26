@@ -13,10 +13,12 @@ export class TFormsComponent implements OnInit {
   ngOnInit(): void {}
 
   defaultQuestion = 'pet';
+  disabled=true;
 
   onSubmit(form: NgForm) {
     console.log(form);
     console.log(form.value);
     console.log(form.value.userData);
+    this.disabled=!this.disabled;
   }
 }
