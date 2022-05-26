@@ -8,13 +8,17 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RFormsComponent implements OnInit {
   genders = ['male', 'female'];
+  forbiddenUserNames = ['admin', 'administrator', 'main', 'master'];
   constructor() {}
 
   signUpForm: FormGroup;
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
-      username: new FormControl(null, Validators.required),
+      username: new FormControl(null, [
+        Validators.required,
+        this.forbiddenNames.bind(this),
+      ]),
       email: new FormControl(null, [Validators.required, Validators.email]),
       gender: new FormControl('female'),
       hobbies: new FormArray([]),
@@ -33,5 +37,12 @@ export class RFormsComponent implements OnInit {
 
   getControls() {
     return (<FormArray>this.signUpForm.get('hobbies')).controls;
+  }
+
+  forbiddenNames(control: FormControl): { [s: string]: boolean } {
+    if (this.forbiddenUserNames.indexOf(control.value) >= 0) {
+      return { nameIsForbidden: true };
+    }
+    return null;
   }
 }
