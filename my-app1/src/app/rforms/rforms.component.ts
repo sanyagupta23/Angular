@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-rforms',
@@ -12,5 +12,15 @@ export class RFormsComponent implements OnInit {
 
   signUpForm: FormGroup;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.signUpForm = new FormGroup({
+      username: new FormControl(null),
+      email: new FormControl(null),
+      gender: new FormControl('female'),
+    });
+  }
+
+  onSubmit() {
+    console.log(this.signUpForm.value);
+  }
 }

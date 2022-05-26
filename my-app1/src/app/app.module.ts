@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { CockpitComponent } from './products/cockpit/cockpit.component';
 import { ProductComponent } from './products/product/product.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NumbersComponent } from './numbers/numbers.component';
 import { BasicHighlightDirective } from './BasicHighlightDirective';
 import { BetterHighlightDirective } from './BetterHighlightDirective';
@@ -63,7 +63,7 @@ const appRoutes: Routes = [
     TFormsComponent,
     RFormsComponent,
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes),ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
