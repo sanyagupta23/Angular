@@ -9,6 +9,14 @@
           class="form-control"
           formControlName="username"
         />
+        <span
+          *ngIf="
+            !signUpForm.get('username').valid &&
+            signUpForm.get('username').touched
+          "
+        >
+          Please enter a valid user name
+        </span>
       </div>
     </div>
     <div class="row">
@@ -20,6 +28,13 @@
           class="form-control"
           formControlName="email"
         />
+        <span
+          *ngIf="
+            !signUpForm.get('email').valid && signUpForm.get('email').touched
+          "
+        >
+          Please enter a valid email!</span
+        >
       </div>
     </div>
     <div class="row">
@@ -33,6 +48,22 @@
         </div>
       </div>
     </div>
+    <div formArrayName="hobbies">
+      <h4>Your Hobbies</h4>
+      <button class="btn btn-default" type="button" (click)="onAddHobby()">
+        Add Hobby
+      </button>
+      <div
+        class="form-group"
+        *ngFor="let hobbyControl of getControls(); let i = index"
+      >
+        <input type="text" class="form-control" [formControlName]="i" />
+      </div>
+    </div>
+
+    <span *ngIf="!signUpForm.valid && signUpForm.touched">
+      Please enter valid data!
+    </span>
 
     <button class="btn btn-primary m-2" type="submit">Submit</button>
   </form>
