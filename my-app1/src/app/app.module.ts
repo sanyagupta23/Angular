@@ -22,6 +22,8 @@ import { ObservablesComponent } from './observables/observables.component';
 import { ServersComponent } from './servers/servers.component';
 import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { TFormsComponent } from './tforms/tforms.component';
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,6 +34,7 @@ const appRoutes: Routes = [
   { path: 'users/:id/:name', component: UserComponent },
   { path: 'observables', component: ObservablesComponent },
   { path: 'servers', component: ServersComponent },
+  { path: 'tforms', component: TFormsComponent },
 ];
 
 @NgModule({
@@ -53,7 +56,9 @@ const appRoutes: Routes = [
     ObservablesComponent,
     ServersComponent,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    HomeComponent,
+    TFormsComponent,
   ],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
   providers: [],
