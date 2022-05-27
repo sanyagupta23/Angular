@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { PostData } from './postdata.model';
-
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-blog',
@@ -17,13 +17,15 @@ export class BlogComponent implements OnInit {
     'https://blogapp-d0bde-default-rtdb.firebaseio.com/.json';
 
   ngOnInit(): void {
-    //this.fetchPosts();
+    this.fetchPosts();
   }
 
-  createPost(postData: { title: string; content: string }) {
+  createPost(postData: { title: string; content: string }, form: NgForm) {
     console.log(postData);
     this.http.post(this.firebaseUrl, postData).subscribe((responseData) => {
       console.log(responseData);
+      form.reset();
+      this.fetchPosts();
     });
   }
 
@@ -32,11 +34,10 @@ export class BlogComponent implements OnInit {
   }
 
   onDeletePosts() {
-    // this.fetchedPosts=[];
-    this.http.delete(this.firebaseUrl).subscribe((deletePost)=>{
-      console.log(deletePost);
-      this.fetchedPosts=[];
-    })
+    this.http.delete(this.firebaseUrl).subscribe((response) => {
+      console.log('Posts deleted: ' + response);
+      this.fetchedPosts = [];
+    });
   }
 
   fetchPosts() {
