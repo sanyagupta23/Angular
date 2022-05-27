@@ -32,7 +32,11 @@ export class BlogComponent implements OnInit {
   }
 
   onDeletePosts() {
-    this.fetchedPosts=[];
+    // this.fetchedPosts=[];
+    this.http.delete(this.firebaseUrl).subscribe((deletePost)=>{
+      console.log(deletePost);
+      this.fetchedPosts=[];
+    })
   }
 
   fetchPosts() {
