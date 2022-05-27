@@ -6,15 +6,20 @@ import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './products/product/product.component';
 import { CreateComponent } from './create/create.component';
-import { AboutComponent } from './about/about.component';
+
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MembersComponent } from './members/members.component';
+import { ContactComponent } from './contact/contact.component';
+
 
 const appRoute : Routes = [
 {path: '' , component:HomeComponent},
 {path : 'products' , component:ProductsComponent},
 {path:'create' , component:CreateComponent},
-{path:'about' , component:AboutComponent},
+{path:'contact' , component:ContactComponent},
+{path:'members' , component:MembersComponent},
 ];
 @NgModule({
   declarations: [
@@ -23,10 +28,13 @@ const appRoute : Routes = [
     ProductsComponent,
     ProductComponent,
     CreateComponent,
-    AboutComponent
+    
+    MembersComponent,
+    ContactComponent,
+   
   ],
   imports: [
-    BrowserModule ,FormsModule,RouterModule.forRoot(appRoute)
+    BrowserModule ,FormsModule,RouterModule.forRoot(appRoute),HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
