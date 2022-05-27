@@ -24,6 +24,8 @@ import { ShortenPipe } from './pipes/shorten.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { TFormsComponent } from './tforms/tforms.component';
 import { RFormsComponent } from './rforms/rforms.component';
+import { BlogComponent } from './blog/blog.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const appRoutes: Routes = [
@@ -37,6 +39,8 @@ const appRoutes: Routes = [
   { path: 'servers', component: ServersComponent },
   { path: 'tforms', component: TFormsComponent },
   { path: 'rforms', component: RFormsComponent },
+  { path: 'blog', component: BlogComponent },
+
 ];
 
 @NgModule({
@@ -62,8 +66,9 @@ const appRoutes: Routes = [
     HomeComponent,
     TFormsComponent,
     RFormsComponent,
+    BlogComponent,
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes),ReactiveFormsModule],
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes),ReactiveFormsModule,HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
