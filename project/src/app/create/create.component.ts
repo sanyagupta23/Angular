@@ -14,7 +14,7 @@ export class CreateComponent implements OnInit {
   fetchedPosts: PostData[] = [];
   constructor(private http: HttpClient) { }
   firebaseUrl =
-  'https://blogapp-d0bde-default-rtdb.firebaseio.com/.json';
+  'https://angular-b30eb-default-rtdb.firebaseio.com/.json';
 
   ngOnInit(): void {
   }
